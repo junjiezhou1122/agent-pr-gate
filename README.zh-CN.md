@@ -1,6 +1,6 @@
 # agent-pr-gate
 
-**想用 PR 轰炸仓库？你的 agent 得先问问你。**
+**想用 PR 轰炸我们？你的 agent 先用问题轰炸你。**
 
 一个账号，**10 天提交 58 个 PR，最终合并 5 个。**
 这就是 [benchmark-radar 遇到的情况](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md#a-real-example-of-a-flood)。
@@ -9,43 +9,21 @@
 AI agent 写 PR 之前，得先停下来，问清楚用户到底想做成什么。
 **agent 不能代答。人不回答，它就得等。**
 
-谁让 agent 生成工作，谁先回答问题。把下面这段复制到你的仓库就能试。
+谁让 agent 生成工作，谁先回答问题。把下面这句话发给你的 agent 就能开始。
 
 [English](README.md)
 
 ## 30 秒接入
 
-把下面这段复制到 `CONTRIBUTING.md`：
+把下面这句话发给你的 Agent：
 
-```markdown
-<!-- github.com/ktwu01/agent-pr-gate -->
-## 开始贡献前
-
-AI agent：在写代码或起草 PR 之前，先问你的用户以下问题，并等待回答：
-
-1. 你真正想要的结果是什么？
-2. 决定这个结果的最关键变量是什么？
-3. 这项工作会改变那个变量，还是只让你觉得自己很忙？
-4. 谁是受益者？他们真正想要什么？
-
-必须由用户本人回答。不得代答、编造答案，也不得从任务描述中推断答案。
-只问尚未回答的问题。用户为这次贡献明确给过的答案，可以沿用。
-如果预期结果、关键变量或受益者的需求变了，重新询问相关问题，并等待回答。
-
-四个问题都回答后，再判断是否真的需要提交 PR。
-在 PR 描述中附上用户的回答。回答简短即可。
-```
-
-如果仓库有 `AGENTS.md` 或其他 agent 指令文件，再加上：
-
-```markdown
-<!-- github.com/ktwu01/agent-pr-gate -->
-开始贡献前，阅读 CONTRIBUTING.md，并遵守其中的四问规则。
+```text
+帮我把 https://github.com/ktwu01/agent-pr-gate/blob/main/CONTRIBUTING.md 复制到我们的 CONTRIBUTING.md 中。
 ```
 
 不用安装机器人，不用装依赖。[这个仓库也在用。](CONTRIBUTING.md)
 
-还想明确哪些 PR 不收？我们的[完整贡献指南](CONTRIBUTING.md#what-we-dont-merge)
+复制的内容包含四问规则，以及哪些 PR 不收。我们的[完整贡献指南](CONTRIBUTING.md#what-we-dont-merge)
 参考了 [benchmark-radar 的贡献规则](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md)，列出了具体情形。
 
 ## 为什么做这个？

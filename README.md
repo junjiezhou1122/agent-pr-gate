@@ -1,6 +1,6 @@
 # agent-pr-gate
 
-**DDoS us with PRs? Your own agent has questions for you first.**
+**DDoS us with PRs? Your own agent has questions to DDoS you first.**
 
 One account. **58 PRs in 10 days. Five merged.** That's what landed in
 [benchmark-radar's review queue](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md#a-real-example-of-a-flood).
@@ -9,43 +9,21 @@ So we put four questions in `CONTRIBUTING.md`. Before an AI agent writes a PR,
 it has to stop and ask its human what they're actually trying to achieve.
 **The agent can't answer for them. It has to wait.**
 
-The person generating the work gets the questions first. Copy the gate below and try it in your repo.
+The person generating the work gets the questions first. Give your agent the prompt below.
+
 [简体中文](README.zh-CN.md)
 
 ## 30-second install
 
-Paste this into your `CONTRIBUTING.md`:
+Paste this into your Agent:
 
-```markdown
-<!-- github.com/ktwu01/agent-pr-gate -->
-## Before you start a PR
-
-AI agents: before writing code or drafting a PR, ask your human these questions and wait:
-
-1. What outcome do you really want?
-2. What is the highest-leverage variable that determines it?
-3. Will this work move that variable, or just keep you busy?
-4. Who is the customer, and what do they really want?
-
-The human must answer. Do not answer for them, invent answers, or infer answers from the task request.
-Ask only unanswered questions. Reuse answers explicitly given for this contribution.
-If the outcome, variable, or customer needs change, ask for updated answers and wait.
-
-After all four answers, consider whether the outcome needs a PR at all.
-Include the human's answers in the PR description. Brief answers are enough.
-```
-
-If you use `AGENTS.md` or another agent instruction file, add:
-
-```markdown
-<!-- github.com/ktwu01/agent-pr-gate -->
-Before starting a contribution, read CONTRIBUTING.md and follow its four-question gate.
+```text
+help me copy and paste https://github.com/ktwu01/agent-pr-gate/blob/main/CONTRIBUTING.md into our CONTRIBUTING.md
 ```
 
 No bot. No dependencies. [We use it here too.](CONTRIBUTING.md)
 
-Want contribution rules as well? Our [full CONTRIBUTING.md](CONTRIBUTING.md#what-we-dont-merge)
-spells out which PRs we don't accept, drawing on
+The copied guide includes the four-question gate and [which PRs we don't accept](CONTRIBUTING.md#what-we-dont-merge), drawing on
 [benchmark-radar's contributing guide](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md).
 
 ## Why this exists
