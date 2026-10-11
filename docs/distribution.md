@@ -30,7 +30,7 @@ Topics: `ai-agents`, `pull-requests`, `open-source`, `maintainers`, `contributin
 
 The README uses the phrases “AI-generated pull requests”, “contribution policy”, “CONTRIBUTING.md”, and “AGENTS.md” in context. Avoid repeating keywords or adding unrelated model names for traffic.
 
-The static page in this directory includes a page title, description, canonical URL, Open Graph and Twitter metadata, a CreativeWork record, and a sitemap. Serve it through GitHub Pages from `main:/docs`. Confirm the actual Pages URL before announcing it or requesting indexing. GitHub Pages project sites share the host's root robots.txt; do not add a misleading robots.txt under this project path.
+The static page in this directory includes a page title, description, canonical URL, Open Graph and Twitter metadata, a CreativeWork record, and a sitemap. GitHub Pages serves it from `main:/docs` at [koutian.is-a.dev/agent-pr-gate](https://koutian.is-a.dev/agent-pr-gate/), under the author's existing domain. Confirm deployment before requesting indexing. GitHub Pages project sites share the host's root robots.txt; do not add a misleading robots.txt under this project path.
 
 Upload [social-card.png](social-card.png) under repository Settings → General → Social preview. GitHub does not use a README image as its social preview. The editable source is [social-card.svg](social-card.svg). GitHub [recommends 1280 × 640 and a file under 1 MB](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/customizing-your-repositorys-social-media-preview).
 

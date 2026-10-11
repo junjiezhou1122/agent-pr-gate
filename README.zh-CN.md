@@ -12,7 +12,7 @@
 **人自己回答，agent 等回答后再继续。** 受益者可以是软件用户，也可以是维护者。
 不用装机器人或依赖，但需要 agent 读取并遵守仓库指令。
 
-[English](README.md)
+[English](README.md) · [项目页面](https://koutian.is-a.dev/agent-pr-gate/)
 
 ## 加到你的仓库
 

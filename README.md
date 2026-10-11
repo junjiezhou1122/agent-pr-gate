@@ -12,7 +12,7 @@ Ask the contributor's agent to pause before writing code and get four answers fr
 **The human answers. The agent waits.** “Customer” can mean a user or a maintainer.
 No bot or dependencies. The gate relies on agents reading and following your repository instructions.
 
-[Copy the snippets](#add-it-to-your-repo) · [Maintainer reports](#maintainers-have-described-the-problem) · [简体中文](README.zh-CN.md)
+[Copy the snippets](#add-it-to-your-repo) · [Project page](https://koutian.is-a.dev/agent-pr-gate/) · [Maintainer reports](#maintainers-have-described-the-problem) · [简体中文](README.zh-CN.md)
 
 ## Add it to your repo
 
