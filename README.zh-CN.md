@@ -1,9 +1,15 @@
 # agent-pr-gate
 
-**让 agent 先问清楚自己的用户，再来占用维护者的审查时间。**
+**想用 PR 轰炸仓库？你的 agent 得先问问你。**
 
-仓库被 AI 生成的 PR 淹没了？在 `CONTRIBUTING.md` 里加四个问题。
-agent 来问，人来回答。没回答完，agent 就得等。
+一个账号，**10 天提交 58 个 PR，最终合并 5 个。**
+这就是 [benchmark-radar 遇到的情况](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md#a-real-example-of-a-flood)。
+
+于是，我们在 `CONTRIBUTING.md` 里加了四个问题。
+AI agent 写 PR 之前，得先停下来，问清楚用户到底想做成什么。
+**agent 不能代答。人不回答，它就得等。**
+
+谁让 agent 生成工作，谁先回答问题。把下面这段复制到你的仓库就能试。
 
 [English](README.md)
 
@@ -12,7 +18,7 @@ agent 来问，人来回答。没回答完，agent 就得等。
 把下面这段复制到 `CONTRIBUTING.md`：
 
 ```markdown
-<!-- agent-pr-gate v1 -->
+<!-- github.com/ktwu01/agent-pr-gate -->
 ## 开始贡献前
 
 AI agent：在写代码或起草 PR 之前，先问你的用户以下问题，并等待回答：
@@ -33,11 +39,14 @@ AI agent：在写代码或起草 PR 之前，先问你的用户以下问题，�
 如果仓库有 `AGENTS.md` 或其他 agent 指令文件，再加上：
 
 ```markdown
-<!-- agent-pr-gate v1 -->
+<!-- github.com/ktwu01/agent-pr-gate -->
 开始贡献前，阅读 CONTRIBUTING.md，并遵守其中的四问规则。
 ```
 
 不用安装机器人，不用装依赖。[这个仓库也在用。](CONTRIBUTING.md)
+
+还想明确哪些 PR 不收？我们的[完整贡献指南](CONTRIBUTING.md#what-we-dont-merge)
+参考了 [benchmark-radar 的贡献规则](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md)，列出了具体情形。
 
 ## 为什么做这个？
 
@@ -55,8 +64,8 @@ AI agent：在写代码或起草 PR 之前，先问你的用户以下问题，�
 
 ## 谁在用？
 
-保留注释 `<!-- agent-pr-gate v1 -->`，别人就能通过它找到你的仓库。
-[在 GitHub 上搜索](https://github.com/search?q=%22agent-pr-gate+v1%22+path%3ACONTRIBUTING.md&type=code)。
+保留注释 `<!-- github.com/ktwu01/agent-pr-gate -->`，别人就能通过它找到你的仓库。
+[在 GitHub 上搜索](https://github.com/search?q=%22github.com%2Fktwu01%2Fagent-pr-gate%22+path%3ACONTRIBUTING.md&type=code)。
 公布采用数量前，请确认各仓库确实使用了规则，并按仓库去重。搜索结果可能包含副本和示例，也会漏掉未被索引的仓库。
 
 ## 分享给其他维护者

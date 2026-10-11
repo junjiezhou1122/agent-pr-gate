@@ -1,10 +1,15 @@
 # agent-pr-gate
 
-**Make the agent ask its human before it asks for your review.**
+**DDoS us with PRs? Your own agent has questions for you first.**
 
-Getting flooded with AI-generated PRs? Put four questions in `CONTRIBUTING.md`.
-The agent asks. The human answers. The agent has to wait.
+One account. **58 PRs in 10 days. Five merged.** That's what landed in
+[benchmark-radar's review queue](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md#a-real-example-of-a-flood).
 
+So we put four questions in `CONTRIBUTING.md`. Before an AI agent writes a PR,
+it has to stop and ask its human what they're actually trying to achieve.
+**The agent can't answer for them. It has to wait.**
+
+The person generating the work gets the questions first. Copy the gate below and try it in your repo.
 [简体中文](README.zh-CN.md)
 
 ## 30-second install
@@ -12,7 +17,7 @@ The agent asks. The human answers. The agent has to wait.
 Paste this into your `CONTRIBUTING.md`:
 
 ```markdown
-<!-- agent-pr-gate v1 -->
+<!-- github.com/ktwu01/agent-pr-gate -->
 ## Before you start a PR
 
 AI agents: before writing code or drafting a PR, ask your human these questions and wait:
@@ -33,11 +38,15 @@ Include the human's answers in the PR description. Brief answers are enough.
 If you use `AGENTS.md` or another agent instruction file, add:
 
 ```markdown
-<!-- agent-pr-gate v1 -->
+<!-- github.com/ktwu01/agent-pr-gate -->
 Before starting a contribution, read CONTRIBUTING.md and follow its four-question gate.
 ```
 
 No bot. No dependencies. [We use it here too.](CONTRIBUTING.md)
+
+Want contribution rules as well? Our [full CONTRIBUTING.md](CONTRIBUTING.md#what-we-dont-merge)
+spells out which PRs we don't accept, drawing on
+[benchmark-radar's contributing guide](https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md).
 
 ## Why this exists
 
@@ -55,8 +64,8 @@ This works only when an agent reads and follows the instructions. It is not an e
 
 ## Who uses it?
 
-Keep `<!-- agent-pr-gate v1 -->` in your snippet so others can find it.
-[Search GitHub for adopters](https://github.com/search?q=%22agent-pr-gate+v1%22+path%3ACONTRIBUTING.md&type=code).
+Keep `<!-- github.com/ktwu01/agent-pr-gate -->` in your snippet so others can find it.
+[Search GitHub for adopters](https://github.com/search?q=%22github.com%2Fktwu01%2Fagent-pr-gate%22+path%3ACONTRIBUTING.md&type=code).
 Verify actual use and count unique repos before reporting adoption numbers. Search results can include copies and examples, and miss unindexed repos.
 
 ## Pass it on
