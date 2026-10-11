@@ -42,7 +42,7 @@ This works only when an agent reads and follows the instructions. It is not an e
 
 ## Who uses it?
 
-Keep `<!-- github.com/ktwu01/agent-pr-gate -->` in your snippet so others can find it.
+Keep `<!-- https://github.com/ktwu01/agent-pr-gate -->` in your snippet so others can find it.
 [Search GitHub for adopters](https://github.com/search?q=%22github.com%2Fktwu01%2Fagent-pr-gate%22+path%3ACONTRIBUTING.md&type=code).
 Verify actual use and count unique repos before reporting adoption numbers. Search results can include copies and examples, and miss unindexed repos.
 
