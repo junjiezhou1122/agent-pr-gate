@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+<rect width="1280" height="640" fill="#f5f3e9"/>
+<rect x="0" y="0" width="12" height="640" fill="#173e36"/>
+<text x="64" y="76" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#173e36">agent-pr-gate</text>
+<rect x="64" y="104" width="1152" height="1" fill="#cbd4ca"/>
+<text x="64" y="266" font-family="Arial, sans-serif" font-size="72" font-weight="700" fill="#173e36">PR flood to DDoS our repo?</text>
+<rect x="64" y="313" width="1152" height="144" fill="#173e36"/>
+<text x="92" y="413" font-family="Arial, sans-serif" font-size="88" font-weight="700" fill="#f5f3e9">DDoS yourself first.</text>
+<text x="64" y="585" font-family="Arial, sans-serif" font-size="23" font-weight="400" fill="#173e36">github.com/ktwu01/agent-pr-gate</text>
+</svg>

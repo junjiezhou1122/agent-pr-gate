@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>agent-pr-gate | A contribution policy for AI-generated PRs</title>
+  <meta name="description" content="Overwhelmed by AI-generated pull requests? Copy a four-question gate into CONTRIBUTING.md and AGENTS.md. Ask the human to explain the value before the agent writes code.">
+  <meta name="author" content="Koutian Wu">
+  <link rel="canonical" href="https://ktwu01.github.io/agent-pr-gate/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="agent-pr-gate">
+  <meta property="og:title" content="PR flood to DDoS our repo? DDoS yourself first.">
+  <meta property="og:description" content="A copy-paste contribution policy for repository maintainers. Four questions. The human answers. The agent waits.">
+  <meta property="og:url" content="https://ktwu01.github.io/agent-pr-gate/">
+  <meta property="og:image" content="https://ktwu01.github.io/agent-pr-gate/social-card.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="agent-pr-gate: PR flood to DDoS our repo? DDoS yourself first.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PR flood to DDoS our repo? DDoS yourself first.">
+  <meta name="twitter:description" content="Four questions before code. A copy-paste contribution policy for repository maintainers.">
+  <meta name="twitter:image" content="https://ktwu01.github.io/agent-pr-gate/social-card.png">
+  <meta name="twitter:image:alt" content="agent-pr-gate: PR flood to DDoS our repo? DDoS yourself first.">
+  <meta name="theme-color" content="#173e36">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"agent-pr-gate","description":"A copy-paste contribution policy for maintainers overwhelmed by AI-generated pull requests.","url":"https://ktwu01.github.io/agent-pr-gate/","image":"https://ktwu01.github.io/agent-pr-gate/social-card.png","license":"https://creativecommons.org/publicdomain/zero/1.0/","author":{"@type":"Person","name":"Koutian Wu","url":"https://github.com/ktwu01"},"isBasedOn":"https://github.com/ktwu01/agent-pr-gate","inLanguage":"en"}
+  </script>
+  <style>
+    :root { color-scheme: light; --ink:#173e36; --paper:#f5f3e9; --muted:#52645b; --line:#cbd4ca; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:24px; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:18px/1.6 system-ui,sans-serif; }
+    a { color:inherit; text-underline-offset:4px; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible,button:focus-visible,summary:focus-visible { outline:3px solid #b95121; outline-offset:5px; }
+    .wrap { max-width:1080px; margin:auto; padding:0 32px; }
+    header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:28px 0; border-bottom:1px solid var(--line); }
+    .brand { font-weight:750; text-decoration:none; letter-spacing:-.5px; }
+    nav { display:flex; gap:24px; font-size:15px; }
+    .hero { padding:70px 0 56px; }
+    .eyebrow { font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+    h1 { max-width:850px; margin:18px 0 26px; font-size:clamp(42px,7vw,76px); line-height:1.05; letter-spacing:-3px; }
+    .intro { max-width:650px; font-size:22px; }
+    .actions { display:flex; flex-wrap:wrap; align-items:center; gap:20px; margin:28px 0 16px; }
+    .primary { display:inline-block; background:var(--ink); color:var(--paper); padding:12px 20px; border-radius:4px; font-weight:650; text-decoration:none; }
+    .note { color:var(--muted); font-size:15px; max-width:680px; }
+    section { border-top:1px solid var(--line); padding:40px 0; }
+    h2 { margin:0 0 18px; font-size:30px; line-height:1.2; letter-spacing:-.6px; }
+    h3 { font-size:19px; }
+    .questions { list-style:none; counter-reset:q; padding:0; margin:24px 0; }
+    .questions li { counter-increment:q; display:flex; align-items:baseline; gap:20px; border-bottom:1px solid var(--line); padding:17px 0; font-size:22px; }
+    .questions li::before { content:"0" counter(q); color:var(--muted); font:14px ui-monospace,monospace; }
+    .rule { font-size:22px; font-weight:650; }
+    .install-head { display:flex; justify-content:space-between; align-items:center; gap:20px; margin:20px 0 10px; }
+    .install-head h3 { margin:0; }
+    button { border:1px solid var(--ink); color:var(--ink); background:transparent; border-radius:4px; padding:9px 15px; font:600 14px system-ui,sans-serif; cursor:pointer; }
+    pre { margin:0; padding:22px; background:#e9ede3; border:1px solid var(--line); border-radius:4px; white-space:pre-wrap; overflow-wrap:anywhere; font:14px/1.7 ui-monospace,monospace; }
+    code { font-family:ui-monospace,monospace; }
+    .evidence { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+    .stat { margin:0; font-size:52px; font-weight:750; line-height:1.2; letter-spacing:-2px; }
+    .source { font-size:15px; }
+    details { padding:16px 0; border-bottom:1px solid var(--line); }
+    summary { cursor:pointer; font-weight:650; }
+    footer { padding:32px 0 40px; border-top:1px solid var(--line); font-size:14px; color:var(--muted); }
+    #copy-status { min-height:24px; }
+    @media(max-width:640px) { .wrap { padding:0 20px; } header { padding:20px 0; } nav { gap:14px; } .hero { padding:44px 0 36px; } h1 { letter-spacing:-1.7px; } .intro { font-size:20px; } .questions li { font-size:19px; gap:14px; } .evidence { grid-template-columns:1fr; gap:24px; } pre { padding:16px; font-size:13px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="https://github.com/ktwu01/agent-pr-gate">agent-pr-gate</a>
+      <nav aria-label="Main"><a href="#install">Copy the gate</a><a href="https://github.com/ktwu01/agent-pr-gate/blob/main/README.zh-CN.md" lang="zh-CN">中文</a></nav>
+    </header>
+    <main>
+      <div class="hero">
+        <p class="eyebrow">For repository maintainers</p>
+        <h1>AI-generated PRs?<br>Ask the human first.</h1>
+        <p class="intro">Put four questions in your contribution rules. Ask the person behind the agent to explain who benefits before it writes code.</p>
+        <div class="actions"><a class="primary" href="#install">Copy the gate</a><a href="https://github.com/ktwu01/agent-pr-gate">View on GitHub</a></div>
+        <p class="note">No bot or dependencies. Works only with agents that read and follow your repository instructions.</p>
+      </div>
+      <section aria-labelledby="questions-title">
+        <h2 id="questions-title">Four questions before code</h2>
+        <ol class="questions">
+          <li>What outcome do you really want?</li>
+          <li>What is the highest-leverage variable that determines it?</li>
+          <li>Will this work move that variable, or just keep you busy?</li>
+          <li>Who is the customer, and what do they really want?</li>
+        </ol>
+        <p class="rule">The human answers. The agent waits.</p>
+        <p>“Customer” can mean a user or a maintainer. Reuse answers for the same contribution; ask again if the goal changes.</p>
+      </section>
+      <section id="install" aria-labelledby="install-title">
+        <h2 id="install-title">Add it to your repo</h2>
+        <p>Append these sections to your existing files at the repository root. Preserve your project's contribution rules.</p>
+        <div class="install-head"><h3>CONTRIBUTING.md</h3><button hidden data-copy="contributing">Copy snippet</button></div>
+        <pre><code id="contributing">&lt;!-- https://github.com/ktwu01/agent-pr-gate --&gt;
+## Before you start a PR
+
+AI agents: before writing code or drafting a PR, ask your human these questions and wait:
+
+1. What outcome do you really want?
+2. What is the highest-leverage variable that determines it?
+3. Will this work move that variable, or just keep you busy?
+4. Who is the customer, and what do they really want?
+
+The human must answer. Do not answer for them, invent answers, or infer answers from the task request.
+Ask only unanswered questions. Reuse answers explicitly given for this contribution.
+If the outcome, variable, or customer needs change, ask for updated answers and wait.
+After all four answers, consider whether the outcome needs a PR at all.
+Include brief, non-sensitive answers in the PR description. Omit private details.
+Send one contribution and wait for review before sending more.</code></pre>
+        <div class="install-head"><h3>AGENTS.md</h3><button hidden data-copy="agents">Copy snippet</button></div>
+        <pre><code id="agents">&lt;!-- https://github.com/ktwu01/agent-pr-gate --&gt;
+## Contributions
+
+Read CONTRIBUTING.md before changing files or drafting a PR.
+Follow its four-question gate: ask the human for missing answers and wait.
+Do not supply or infer the human's answers yourself.
+Reuse their explicit answers for this contribution. Ask for updates if the goal changes.</code></pre>
+        <p id="copy-status" class="note" role="status" aria-live="polite"></p>
+      </section>
+      <section aria-labelledby="origin-title">
+        <div class="evidence">
+          <div><h2 id="origin-title">Why this exists</h2><p class="stat">58 PRs. 5 merged.</p><p>One account, 10 days. The benchmark-radar maintainer documented a burst of eight PRs in 27 seconds.</p><p class="source"><a href="https://github.com/ktwu01/benchmark-radar/blob/main/CONTRIBUTING.md#a-real-example-of-a-flood">Read the maintainer's record and linked PRs</a></p></div>
+          <div><h3>What we know so far</h3><p>benchmark-radar added the four questions and a separate open-item limit. We have not measured a reduction attributable to this gate.</p><p class="note">The source gives the date range as September 29 to October 9, 2026. These are counts from the motivating incident, not results after adoption.</p></div>
+        </div>
+      </section>
+      <section aria-labelledby="reports-title">
+        <h2 id="reports-title">Maintainers have described the pressure</h2>
+        <p><a href="https://glama.ai/blog/2026-03-19-open-source-has-a-bot-problem">punkpeye's account from awesome-mcp-servers</a> describes bot PRs following an instruction in CONTRIBUTING.md.</p>
+        <p><a href="https://daniel.haxx.se/blog/2025/07/14/death-by-a-thousand-slops/">Daniel Stenberg's account from curl</a> describes the cost of low-quality security reports. His <a href="https://lists.haxx.se/pipermail/daniel/2026-April/000153.html">April 2026 update</a> also describes a growing load of good AI-assisted reports.</p>
+        <p><a href="https://x.com/GenAI_is_real/status/2108345403099980017">Guitar Cat + LLM's October 2026 post</a> argues that contributors remain responsible for validating agent-written code and respecting reviewers' time.</p>
+        <p class="note">These are independent accounts of review workload. They are not endorsements or evidence of this gate's effectiveness.</p>
+      </section>
+      <section aria-labelledby="faq-title">
+        <h2 id="faq-title">Before you adopt it</h2>
+        <details><summary>Does this block AI PR spam?</summary><p>It is a contribution policy, not an enforced blocker. An agent can ignore it, and a spam script can skip it. Pair it with an open-PR limit and clear acceptance criteria.</p></details>
+        <details><summary>Can I still accept AI-assisted contributions?</summary><p>Yes. Ask the contributor to check their work and explain the need. Judge the contribution by its usefulness and evidence.</p></details>
+        <details><summary>Do I need a bot, package, or paid service?</summary><p>No. Copy the text into CONTRIBUTING.md and AGENTS.md. The contributor's agent must read and follow those files.</p></details>
+        <details><summary>How can I help evaluate it?</summary><p><a href="https://github.com/ktwu01/agent-pr-gate/issues/new?template=gate-report.yml">Report an observation</a>: which agent you used, whether it asked and waited, and your time window. Share public or synthetic examples only. Reports of failure are useful too.</p></details>
+      </section>
+    </main>
+    <footer>Created by <a href="https://github.com/ktwu01">Koutian Wu</a>. Inspired by <a href="https://x.com/ycaophysics">@ycaophysics</a>. <a href="https://github.com/ktwu01/agent-pr-gate/blob/main/LICENSE">CC0 1.0</a>: copy and adapt freely.</footer>
+  </div>
+  <script>
+    document.querySelectorAll('[data-copy]').forEach(button => {
+      button.hidden = false;
+      button.addEventListener('click', async () => {
+        const status = document.getElementById('copy-status');
+        try {
+          await navigator.clipboard.writeText(document.getElementById(button.dataset.copy).textContent);
+          status.textContent = button.dataset.copy === 'agents' ? 'AGENTS.md snippet copied.' : 'CONTRIBUTING.md snippet copied.';
+        } catch {
+          status.textContent = 'Select the snippet and copy it with your keyboard.';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

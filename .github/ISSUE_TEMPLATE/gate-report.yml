@@ -1,0 +1,43 @@
+name: Report gate behavior
+description: Share whether an agent asked the questions and waited for its human.
+title: "Gate report: "
+body:
+  - type: markdown
+    attributes:
+      value: "Share public or synthetic examples only. Do not include secrets, private conversations, or customer data."
+  - type: input
+    id: policy
+    attributes:
+      label: Public policy link
+      description: Link the CONTRIBUTING.md or AGENTS.md that the agent read, if public.
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and version
+      description: Include the model only if you know which model ran.
+    validations:
+      required: true
+  - type: dropdown
+    id: behavior
+    attributes:
+      label: What did the agent do?
+      options:
+        - Asked the questions and waited for the human
+        - Asked but continued without the human's answers
+        - Answered the questions itself
+        - Skipped the gate
+        - Other or uncertain
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observation and time window
+      description: Describe what happened, when, and how many attempts you observed. Separate observations from guesses.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public or synthetic evidence
+      description: Add a public link or a short synthetic reproduction. Omit private details.
